@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 /* @param
  * cmp will have it's own mechanism to compare two keys and return if they are equal or not.
  * This linked list will assume that it will return 0 if the key's are euqal
@@ -130,6 +129,7 @@ void *linkedlist_map_remove(struct linkedlist_map *map, void *key) {
             map->head = NULL;
         } else {
             result->next->prev = NULL;
+            map->head = result->next;
             free(result);
         }
         
@@ -146,6 +146,7 @@ void *linkedlist_map_remove(struct linkedlist_map *map, void *key) {
         }
     }
     map->size--;
+    map->keydel(key);
     return value;
 }
 
@@ -178,6 +179,7 @@ void linkedlist_map_destroy(struct linkedlist_map *n) {
         free(map);
         return;
     }
+
     //Otherwise their should be an element inside the funtion.
     struct linkedlist_map_entry *cursur = map->head;
     struct linkedlist_map_entry *tmp = NULL;
