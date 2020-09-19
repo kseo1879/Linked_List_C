@@ -23,24 +23,110 @@ gcc ./src/linkedlist.o ./src/helper.o ./test/yourtestcode.o -o map
 
 ### 2. After you build your program here is the option:
 
-This is a testing function that will test building a map and destorying a map.
+#### This is a testing function that will test building a map and destorying a map.
 ```bash
 make test1
 ```
 
-This is a testing function that will test putting and getting from the map.
+- This is the result of the following test.
+```bash
+./map 1
+Succesfully created function
+Sucessfully Destroyed the function
+```
+
+#### This is a testing function that will test putting and getting from the map.
 ```bash
 make test2
 ```
 
-This is a testing function that will test removing an entry from the map
+- This is the result of the following test.
+```bash
+./map 2
+This will test 'put' and 'get' function 
+
+This will be the key and value pair: 
+{['1', 'apple'], ['2', 'banana'], ['3', 'cake']}
+
+Value retrieved for key 1 is apple
+Value retrieved for key 2 is banana
+Value retrieved for key 1 is cake
+
+Now I will put the different value 'cupcake' for key 3 which already exists
+Value retrieved for key 3 is cupcake
+
+Now Destory the function
+
+Key: 1 got removed
+Value: apple got removed
+Key: 2 got removed
+Value: banana got removed
+Key: 3 got removed
+Value: cupcake got removed
+
+Test2 Successful for 'put' and 'get' function
+```
+
+
+#### This is a testing function that will test removing an entry from the map
 ```bash
 make test3
 ```
 
-This is a testing function that will test on getting the size of the map
+- This is the result of the following test.
+```bash
+./map 3
+This will test remove function 
+
+This will be the key and value pair: 
+{['1', 'apple'], ['2', 'banana'], ['3', 'cake']}
+
+
+Now I will remove the key 1
+Key: 1 got removed
+Value removed for key 1 is apple
+If try to remove it again the value should be (null)
+Value returned: (null)
+
+Now Destory the function
+
+Key: 2 got removed
+Value: banana got removed
+Key: 3 got removed
+Value: cake got removed
+
+Test3 Successful for 'remove' function
+```
+
+#### This is a testing function that will test on getting the size of the map
 ```bash
 make test4
+```
+
+- This is the result of the following test.
+```bash
+./map 4
+This will test for size function 
+
+This will be the key and value pair: 
+{['1', 'apple'], ['2', 'banana'], ['3', 'cake']}
+
+
+Now I will test the size of the linked list 
+The size of the linked list is 3
+
+Key: 2 got removed
+Removed one of the key, the size should be 2.
+Returned size: 2
+
+Now Destory the function
+
+Key: 1 got removed
+Value: apple got removed
+Key: 3 got removed
+Value: cake got removed
+
+Test4 Successful for 'size' function
 ```
 
 ### 3. To clean the directory
